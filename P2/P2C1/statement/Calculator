@@ -1,0 +1,26 @@
+ if not left_number.isnumeric() or right_number.isnumeric():
+        print("Error: both numbers must be numeric")
+    else: 
+        left_number = int(left_number)
+        right_number = int(right_number)
+
+        match operation:
+            case "+":
+                result = left_number + right_number
+            case "-":
+                result = left_number - right_number
+            case "*":
+                result = left_number * right_number
+            case "/":
+                #check if the right number is not zero for division
+                if right_number == 0:
+                    print("Error: division by zero is not allowed")
+                else:
+                    result = left_number / right_number
+        
+        #if in default  case then it means the symbol is incorrect
+            case _:
+                print("Error: The operation symbol must be: ['+', '-', '*' or '/']")
+    
+    #print the result
+    print("The result of the operation is: {result}")
